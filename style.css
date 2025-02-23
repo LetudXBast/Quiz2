@@ -1,0 +1,269 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #0D1B2A, #1B263B);
+    color: #E0E0E0;
+/*    background: linear-gradient(135deg, #0D1B2A, #1B263B); 
+    color: #FFFFFF;*/
+    margin: 0;
+    padding: 0;
+}
+
+/* 🟢 Effets néon sur les titres */
+h1, h2 {
+    text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.6);
+}
+
+header {
+    position: fixed; /* Fixe l'en-tête en haut */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1); /* Transparence légère */
+    backdrop-filter: blur(10px); /* Effet de flou pour donner un effet de verre */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Ajoute une bordure subtile */
+    color: white;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Ombre pour donner de la profondeur */
+    z-index: 1000;
+}
+
+
+/*header {
+    background: #007BFF;
+    color: white;
+    padding: 15px;
+}*/
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espacement entre les boutons */
+}
+
+header h1, nav button {
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Ajoute une ombre pour rendre le texte plus lisible */
+}
+
+nav button {
+    background: grey;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/*nav button:hover {
+    background: #ddd;
+}*/
+
+main {
+    padding-top: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 80vh; /* Fixe une hauteur minimale pour éviter les sauts */
+}
+
+section {
+    opacity: 1;
+    transform: translateY(0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centre le texte verticalement */
+    align-items: center; /* Centre le texte horizontalement */
+    min-height: 60vh; /* Assure que toutes les sections ont une hauteur similaire */
+    width: 80%;
+    text-align: center; /* Pour éviter un texte trop large */
+    background: rgba(255, 255, 255, 0.1); /* Légère transparence */
+    backdrop-filter: blur(10px); /* Effet de flou pour donner l'effet de verre */
+    border-radius: 15px;
+    padding: 30px;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Ombre pour donner de la profondeur */
+    margin: 30px auto;
+}
+
+/* 💡 Animation d’apparition en douceur */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+
+
+button:hover {
+    background: #0056b3;
+    transform: scale(1.1); /*augmenter taille bouton si souris passe dessus*/
+    box-shadow: 0px 8px 25px rgba(0, 123, 255, 0.8);
+ /*Apparemment tache d'ombre sur une case si souris passe dessus*/
+}
+
+button {
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(90deg, #007BFF, #00d4ff);
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 25px;
+    color: white;
+}
+
+
+#quiz-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    margin: auto;
+}
+#quiz-result {
+    animation: pop-in 0.5s ease-in-out;
+}
+
+@keyframes pop-in {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/*#quiz-container, #quiz-result {
+    margin-top: 20px;
+}*/
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.correct {
+    background-color: #28a745 !important; /* Vert */
+    color: white;
+}
+
+.wrong {
+    background-color: #dc3545 !important; /* Rouge */
+    color: white;
+}
+
+#progress-bar {
+    height: 5px;
+    width: 0%;
+    background: #007BFF;
+    transition: width 0.5s;
+}
+
+
+
+/*Ajouter un timer barre de temps */
+#timer-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    position: relative;
+}
+
+#timer-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* 🟡 Effet néon sur la barre de progression */
+#timer-bar {
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(90deg, #00ffcc, #0099ff);
+    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
+    border-radius: 5px;
+    transition: width 1s linear;
+}
+
+#time-up-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 0, 0, 0.9);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px 40px;
+    border-radius: 10px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#time-up-message.show {
+    opacity: 1;
+}
+
+#background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/*Téléchargement*/
+.download-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #007BFF, #00d4ff);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.5);
+}
+
+.download-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 8px 25px rgba(0, 123, 255, 0.8);
+}
+
+
+/* Ajouter des frames pulsées avec une opacité changeante pour un effet dynamique
+/*#loading {
+    display: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background: #007BFF;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}*/

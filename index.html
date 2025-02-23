@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Cristallisation industrielle fork2</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Cristallisation Industrielle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+  
+<div id="time-up-message" class="hidden">⏳ Temps écoulé !</div>
+
+<div id="background"></div> 
+
+
+<body>
+
+    <header>
+        <h1>Quiz sur la Cristallisation Industrielle</h1>
+        <nav>
+            <button onclick="showSection('home')">Accueil</button>
+            <button onclick="showSection('course')">Cours</button>
+            <button onclick="showSection('quiz')">Quiz</button>
+            <button onclick="showSection('scores')">Scores</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page d'accueil -->
+        <section id="home">
+<h2><i class="fas fa-home"></i> Bienvenue </h2>
+            <p>Apprenez la cristallisation industrielle et testez vos connaissances avec notre quiz interactif !</p>
+          <a href="document.pdf" download class="download-btn">📄 Télécharger le PDF</a>
+        </section>
+
+        <!-- Section Cours -->
+        <section id="course" class="hidden">
+<h2><i class="fas fa-book"></i> Cours sur la Cristallisation</h2>            <p>La cristallisation industrielle est un processus chimique utilisé pour purifier des substances...</p>
+        </section>
+
+        <!-- Section Quiz -->
+        <section id="quiz" class="hidden">
+<h2><i class="fas fa-question-circle"></i> Choisissez un niveau </h2>
+            <div class="level-buttons">
+                <button onclick="startQuiz('beginner')">Débutant</button>
+                <button onclick="startQuiz('intermediate')">Intermédiaire</button>
+                <button onclick="startQuiz('advanced')">Confirmé</button>
+            </div>
+          
+          <div id="timer-container">
+            <div id="timer-text">05:00</div>
+            <div id="timer-bar"></div>
+          </div>
+          
+            <div id="quiz-container" class="hidden">
+                <p id="question"></p>
+                <div id="answers"></div>
+                <button id="next-btn" class="hidden" onclick="nextQuestion()">Suivant</button>
+            </div>
+            <div id="quiz-result" class="hidden">
+                <h3>Votre score : <span id="score"></span></h3>
+                <button onclick="restartQuiz()">Recommencer</button>
+                <button onclick="showSection('home')">Retour à l'accueil</button>
+            </div>
+        </section>
+
+        <!-- Section Scores -->
+        <section id="scores" class="hidden">
+<h2><i class="fas fa-trophy"></i> Scores</h2>
+            <p>Dernier score : <span id="last-score">0</span></p>
+            <h3>Meilleurs scores</h3>
+            <ul id="best-scores"></ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+  
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script>
+particlesJS("background", {
+    particles: {
+        number: { value: 100 },
+        size: { value: 3 },
+        move: { speed: 2 },
+        line_linked: { enable: true, opacity: 0.3 },
+    }
+});
+</script>
+
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
